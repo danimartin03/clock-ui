@@ -2,20 +2,44 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Time</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f8f9ff"  media="(prefers-color-scheme: light)"/>
+    <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)"/>
+    <title>Clock UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <link rel="stylesheet" href="./src/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
   </head>
   <body>
-    <nav>
+        <nav>
       <ul>
-        <li><a href="#clock">Clock</a></li>
-        <li><a href="#alarm">Alarm</a></li>
-        <li><a href="#stopwatch">Stopwatch</a></li>
-        <li><a href="#timer">Timer</a></li>
+        <li>
+          <a href="#clock">
+            <span class="material-icons" aria-hidden="true">schedule</span>
+            <span>Clock</span>
+          </a>
+        </li>
+        <li>
+          <a href="#alarm">
+            <span class="material-icons" aria-hidden="true">alarm</span>
+            <span>Alarm</span>
+          </a>
+        </li>
+        <li>
+          <a href="#stopwatch">
+            <span class="material-icons" aria-hidden="true">timer</span>
+            <span>Stopwatch</span>
+          </a>
+        </li>
+        <li>
+          <a href="#timer">
+            <span class="material-icons" aria-hidden="true">hourglass_empty</span>
+            <span>Timer</span>
+          </a>
+        </li>
       </ul>
     </nav>
     <main>
