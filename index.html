@@ -4,17 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#f8f9ff"  media="(prefers-color-scheme: light)"/>
-    <meta name="theme-color" content="#111318" media="(prefers-color-scheme: dark)"/>
+    <meta
+      name="theme-color"
+      content="#f8f9ff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#111318"
+      media="(prefers-color-scheme: dark)"
+    />
     <title>Clock UI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <link rel="stylesheet" href="./src/styles.css" />
   </head>
   <body>
-        <nav>
+    <nav>
       <ul>
         <li>
           <a href="#clock">
@@ -36,7 +50,9 @@
         </li>
         <li>
           <a href="#timer">
-            <span class="material-icons" aria-hidden="true">hourglass_empty</span>
+            <span class="material-icons" aria-hidden="true"
+              >hourglass_empty</span
+            >
             <span>Timer</span>
           </a>
         </li>
@@ -54,15 +70,39 @@
             <section class="alarms">
               <input type="time" min="00:00" max="23:59" step="1" />
               <section class="controls">
-                <button class="start material-icons">alarm_on</button>
-                <button class="pause material-icons">alarm_off</button>
-                <button class="delete material-icons">delete</button>
+                <button
+                  class="start material-icons"
+                  aria-label="Enable alarm"
+                  title="Enable alarm"
+                >
+                  alarm_on
+                </button>
+                <button
+                  class="pause material-icons"
+                  aria-label="Disable alarm"
+                  title="Disable alarm"
+                >
+                  alarm_off
+                </button>
+                <button
+                  class="delete material-icons"
+                  aria-label="Delete alarm"
+                  title="Delete alarm"
+                >
+                  delete
+                </button>
               </section>
             </section>
           </template>
           <section class="items"></section>
           <section class="controls">
-            <button class="add material-icons">add_alarm</button>
+            <button
+              class="add material-icons"
+              aria-label="Add alarm"
+              title="Add alarm"
+            >
+              add_alarm
+            </button>
           </section>
         </x-alarm>
       </section>
@@ -70,9 +110,27 @@
         <x-stopwatch>
           <time datetime="PT0S">00:00:00.00</time>
           <section class="controls">
-            <button class="start material-icons">timer</button>
-            <button class="pause material-icons">timer_off</button>
-            <button class="restart material-icons">restart_alt</button>
+            <button
+              class="start material-icons"
+              aria-label="Start"
+              title="Start"
+            >
+              timer
+            </button>
+            <button
+              class="pause material-icons"
+              aria-label="Pause"
+              title="Pause"
+            >
+              timer_off
+            </button>
+            <button
+              class="restart material-icons"
+              aria-label="Reset"
+              title="Reset"
+            >
+              restart_alt
+            </button>
           </section>
         </x-stopwatch>
       </section>
@@ -98,11 +156,41 @@
             </section>
           </section>
           <section class="controls">
-            <button class="start material-icons">timer</button>
-            <button class="pause material-icons">timer_off</button>
-            <button class="restart material-icons">restart_alt</button>
-            <button class="loop material-icons">loop</button>
-            <button class="no-loop material-icons">sync_disabled</button>
+            <button
+              class="start material-icons"
+              aria-label="Start"
+              title="Start"
+            >
+              timer
+            </button>
+            <button
+              class="pause material-icons"
+              aria-label="Pause"
+              title="Pause"
+            >
+              timer_off
+            </button>
+            <button
+              class="restart material-icons"
+              aria-label="Reset"
+              title="Reset"
+            >
+              restart_alt
+            </button>
+            <button
+              class="loop material-icons"
+              aria-label="Enable loop"
+              title="Enable loop"
+            >
+              loop
+            </button>
+            <button
+              class="no-loop material-icons"
+              aria-label="Disable loop"
+              title="Disable loop"
+            >
+              sync_disabled
+            </button>
           </section>
         </x-timer>
       </section>

@@ -1,20 +1,57 @@
 :root {
-  --fg-color: #000000;
-  --bg-color: #ffffff;
+  color-scheme: light dark;
+
+  /* Paleta clara (R01) */
+  --color-bg: #f8f9ff;
+  --color-surface: #e9eef9;
+  --color-primary: #0b57d0;
+  --color-on-primary: #f8f9ff;
+  --color-text: #191c20;
+  --color-text-muted: #43474e;
+  --color-outline: #c3c6cf;
+
+  /* Tipografía (R02) */
+  --font-text: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
 }
 
+/* Paleta oscura: se activa sola si el SO está en modo oscuro (R03) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --fg-color: #ffffff;
-    --bg-color: #000000;
+    --color-bg: #111318;
+    --color-surface: #1d2024;
+    --color-primary: #a8c7fa;
+    --color-on-primary: #062e6f;
+    --color-text: #e2e2e9;
+    --color-text-muted: #c3c6cf;
+    --color-outline: #43474e;
   }
+}
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-text);
+}
+
+time,
+input[type="time"] {
+  font-family: var(--font-mono);
 }
 
 body {
   display: flex;
   flex-direction: column;
   margin: 0;
-  height: 100vh;
+  min-height: 100svh;
   color: var(--fg-color);
   background: var(--bg-color);
 }
