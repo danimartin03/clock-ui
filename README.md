@@ -2,7 +2,7 @@
 
 Interfaz de una app de reloj con alarmas, cronómetro y temporizador.
 
-- Web: [URL de Netlify]
+- Web: [https://clock-ui-dani.netlify.app](https://clock-ui-dani.netlify.app/)
 - Guía de estilo: [Material Design 3](https://m3.material.io/)
 
 ## Ejecutar en local
