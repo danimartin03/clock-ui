@@ -1,76 +1,203 @@
+/* General */
 :root {
   color-scheme: light dark;
-
-  /* Paleta clara (R01) */
-  --color-bg: #f8f9ff;
-  --color-surface: #e9eef9;
-  --color-primary: #0b57d0;
-  --color-on-primary: #f8f9ff;
-  --color-text: #191c20;
-  --color-text-muted: #43474e;
-  --color-outline: #c3c6cf;
-
-  /* Tipografía (R02) */
-  --font-text: "Space Grotesk", system-ui, sans-serif;
-  --font-mono: "Space Mono", ui-monospace, monospace;
+  --bg: #f8f9ff;
+  --surface: #e9eef9;
+  --primary: #0b57d0;
+  --primary-soft: #d3e3fd;
+  --on-primary: #f8f9ff;
+  --text: #191c20;
+  --muted: #43474e;
+  --line: #c3c6cf;
 }
 
-/* Paleta oscura: se activa sola si el SO está en modo oscuro (R03) */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #111318;
-    --color-surface: #1d2024;
-    --color-primary: #a8c7fa;
-    --color-on-primary: #062e6f;
-    --color-text: #e2e2e9;
-    --color-text-muted: #c3c6cf;
-    --color-outline: #43474e;
+    --bg: #111318;
+    --surface: #1d2024;
+    --primary: #a8c7fa;
+    --primary-soft: #0842a0;
+    --on-primary: #062e6f;
+    --text: #e2e2e9;
+    --muted: #c3c6cf;
+    --line: #43474e;
   }
 }
 
-
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
-}
-
-
-body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  font-family: var(--font-text);
-}
-
-time,
-input[type="time"] {
-  font-family: var(--font-mono);
 }
 
 body {
   display: flex;
   flex-direction: column;
-  margin: 0;
   min-height: 100svh;
-  color: var(--fg-color);
-  background: var(--bg-color);
-}
-
-nav > ul {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-}
-
-nav > ul > li {
-  flex: 1 1 auto;
-  text-align: center;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Space Grotesk", sans-serif;
 }
 
 main {
+  flex: 1;
   display: flex;
+}
+
+main > section {
+  flex: 1;
+  padding: 48px 16px;
 }
 
 main > section:not(:target) {
   display: none;
+}
+
+x-clock,
+x-alarm,
+x-stopwatch,
+x-timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+/* Navegación */
+nav {
+  order: 1;
+  background: var(--surface);
+}
+
+nav ul {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  flex: 1;
+}
+
+nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 12px 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  text-decoration: none;
+}
+
+nav .material-icons {
+  padding: 4px 20px;
+  border-radius: 16px;
+}
+
+nav a.active {
+  color: var(--primary);
+}
+
+nav a.active .material-icons {
+  background: var(--primary-soft);
+}
+
+nav a:hover:not(.active) {
+  color: var(--text);
+}
+
+nav a:hover .material-icons {
+  background: var(--primary-soft);
+}
+
+/* Hora */
+time {
+  font-family: "Space Mono", monospace;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+/* Botones */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+button {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--primary);
+  cursor: pointer;
+}
+
+button.start,
+button.add {
+  background: var(--primary);
+  color: var(--on-primary);
+}
+
+/* Campos */
+input {
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Space Mono", monospace;
+  font-size: 1.25rem;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Alarma */
+.alarms {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--surface);
+  border-radius: 16px;
+}
+
+.alarms[ringing] {
+  background: var(--primary-soft);
+}
+
+/* Temporizador */
+.timers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+input.current-interval {
+  background: var(--primary-soft);
+}
+
+/* Escritorio */
+@media (min-width: 600px) {
+  nav {
+    order: 0;
+  }
+
+  time {
+    font-size: 3.5rem;
+  }
 }
